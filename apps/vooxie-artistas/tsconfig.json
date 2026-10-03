@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "expo/tsconfig.base",
+    "../../packages/config/tsconfig.base.json"
+  ],
+  "compilerOptions": {
+    "paths": {
+      "@vooxie/ui": [
+        "../../packages/ui/src"
+      ],
+      "@vooxie/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@vooxie/core": [
+        "../../packages/core/src"
+      ],
+      "@vooxie/core/*": [
+        "../../packages/core/src/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}

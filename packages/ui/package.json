@@ -1,0 +1,24 @@
+{
+  "name": "@vooxie/ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "@expo/vector-icons": "*",
+    "react-native-safe-area-context": "*"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.3",
+    "@types/react": "~19.2.2",
+    "react": "19.2.3",
+    "react-native": "0.86.3",
+    "@expo/vector-icons": "^15.0.2",
+    "react-native-safe-area-context": "~5.7.0"
+  }
+}
