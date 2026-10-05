@@ -1,0 +1,36 @@
+project_id = "vooxie"
+
+[api]
+enabled = true
+port = 54321
+
+[db]
+port = 54322
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "vooxie://"
+# Supabase valida el redirectTo de resetPasswordForEmail() contra esta lista.
+additional_redirect_urls = [
+  "vooxie://reset-password",
+  "vooxie://reset-password**",
+  "vooxie-artistas://reset-password",
+  "vooxie-artistas://reset-password**",
+]
+
+[auth.external.apple]
+enabled = false
+# Se activa en Fase 1 con las credenciales reales de Apple Sign In
+
+[auth.external.google]
+enabled = false
+# Se activa en Fase 1 con las credenciales reales de Google OAuth
+
+# Edge Function: exige JWT de un usuario autenticado de Supabase.
+[functions.youtube-proxy]
+enabled = true
+verify_jwt = true

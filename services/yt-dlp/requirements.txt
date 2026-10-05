@@ -1,0 +1,6 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+# [default] incluye yt-dlp-ejs; `deno` (wheel de PyPI) es el runtime JS que yt-dlp
+# necesita para resolver los desafíos de YouTube. Sin ambos, muchas extracciones fallan.
+yt-dlp[default]>=2026.3.17
+deno>=2.0.0

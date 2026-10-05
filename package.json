@@ -1,0 +1,27 @@
+{
+  "name": "vooxie-monorepo",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "vooxie": "pnpm --filter vooxie start",
+    "vooxie:artistas": "pnpm --filter vooxie-artistas start",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "lint": "pnpm -r --if-present run lint",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "supabase:migrate:new": "supabase migration new",
+    "doctor": "pnpm --filter vooxie exec expo-doctor",
+    "check": "pnpm typecheck && pnpm lint",
+    "yt-dlp:test": "cd services/yt-dlp && python3 -m pytest tests -q",
+    "test": "pnpm test:core && pnpm test:edge && pnpm test:importer && pnpm yt-dlp:test",
+    "test:core": "npx --yes tsx@4 --test packages/core/src/external/youtube/mapper.test.ts packages/core/src/external/youtube/resolveCatalog.test.ts packages/core/src/external/audius/popularity.test.ts packages/core/src/external/deezer/deezer.test.ts packages/core/src/search/searchView.test.ts packages/core/src/library/trackSnapshot.test.ts packages/core/src/catalog/playable.test.ts packages/core/src/player/resolverPolicy.test.ts packages/core/src/player/usePlayerStore.test.ts",
+    "test:edge": "npx --yes tsx@4 --test supabase/functions/youtube-proxy/handler.test.ts",
+    "test:sql": "cd supabase/tests && node catalog_external.test.mjs && node playlists.test.mjs",
+    "test:importer": "pnpm --filter vooxie-importer test",
+    "import:artist": "pnpm --filter vooxie-importer import"
+  },
+  "engines": {
+    "node": ">=20.19.4"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "vooxie-importer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Importador de artistas (Deezer) → Supabase, con emparejado de audio vía servicio yt-dlp.",
+  "scripts": {
+    "import": "node src/cli.mjs",
+    "test": "node --test test/importer.test.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "engines": {
+    "node": ">=20.19.4"
+  }
+}
